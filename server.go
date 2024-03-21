@@ -40,8 +40,8 @@ func postAlbums(c *gin.Context) {
     var newAlbum album
 
     // Call BindJSON to bind the received JSON to
-    // newAlbum.
-    if err := c.BindJSON(&newAlbum); err != nil {
+    // newAlbum. return if no error
+    if err := c.BindJSON(&newAlbum); err == nil {
         return
     }
 
